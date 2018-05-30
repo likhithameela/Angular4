@@ -1,0 +1,4 @@
+create table language(lang_name varchar(50) primary key, description varchar(5000));
+create table projects(prjct_id varchar(20) primary key,prjct_name varchar(20),description varchar(5000),lang_name varchar(50), foreign key(lang_name) references projects(prjct_id));
+create table user(user_id varchar(20) primary key,password varchar(20));
+create table discussion(comment varchar(5000),user_id varchar(20),prjct_id varchar(20),foreign key(user_id) references user(user_id), foreign key(prjct_id) references projects(prjct_id));
