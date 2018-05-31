@@ -8,24 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
-
-  register(submittedData){
-    alert('Parameter recieved : '+submittedData.name);
+  constructor(private http:HttpClient) { }
+  
+    onClick(data){
+      alert(data.user_id);
     
     this.http.post("test/rest/myresource/register1",{
-      id: submittedData.id,
-      name: submittedData.name,
-    })
-      .subscribe(
-        (res: any) => {
-          console.log(res);
-        },
-        err => {
-          console.log("Error occured");
-        }
-      ); 
-  }
+      user_id : data.user_id,
+      password : data.password,
+      }
+    ).subscribe(
+    (res: any)=>{
+      console.log(res);
+      alert("Hi! :)");
+    },
+      err=>{
+        console.log(err);
+        alert("Bye :(");
+      }
+      );
+     }
+
   ngOnInit() {
   }
 }
