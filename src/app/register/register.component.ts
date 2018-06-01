@@ -9,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
-  
+
     onClick(data){
       alert(data.user_id);
-    
-    this.http.post("test/rest/myresource/register1",{
+
+    this.http.post('test/rest/myresource/register1',{
       user_id : data.user_id,
-      password : data.password,
+      password : data.password
       }
     ).subscribe(
-    (res: any)=>{
+    (res: any) =>{
       console.log(res);
       alert("Hi! :)");
     },
