@@ -11,12 +11,20 @@ import {LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { JavaComponent } from './java/java.component';
+import { Python1Component } from './python1/python1.component';
+import { AngularComponent } from './angular/angular.component';
+
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', component: HomeComponent },
   { path: 'register/login', component: LoginComponent },
   { path: 'login/register', component: RegisterComponent },
+  { path: 'java', component: JavaComponent },
+  { path: 'python1', component: Python1Component },
+  { path: 'angular', component: AngularComponent },
   ];
 
 @NgModule({
@@ -26,6 +34,9 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     HeaderComponent,
+    JavaComponent,
+    Python1Component,
+    AngularComponent,
   ],
   imports: [
     BrowserModule,
