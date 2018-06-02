@@ -1,7 +1,7 @@
-
 package com.ts.rest;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +15,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
+import com.ts.dao.Projects;
+import com.ts.dao.ProjectsDAO;
 import com.ts.dao.UserDAO;
 
 /** Example resource class hosted at the URI path "/myresource"
@@ -28,9 +30,9 @@ public class MyResource {
 	Request request;
 	
 	@GET 
-    @Path("/hi")
+	@Path("/hi")
     @Produces("text/plain")
-    public String getIt() {
+    public String hai() {
         return "Hi there! Angular REST SERVICES";
     }
     @GET 
@@ -61,7 +63,7 @@ public class MyResource {
     @POST
     @Path("/register1")
   // @Produces(MediaType.TEXT_PLAIN)
- @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public void addMember(User user) throws IOException {
     	  System.out.println("Inside Registration...");
     	 UserDAO usr = new UserDAO();
@@ -76,4 +78,19 @@ public class MyResource {
             } */
             
     }
+    
+
+    @GET
+    @Path("/projectdetails")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Projects> getData() throws ClassNotFoundException, SQLException {
+    	 System.out.println("hi in dao");
+    	ProjectsDAO projects_dao = new ProjectsDAO(); 
+    	List<Projects> list = new ArrayList<Projects>();
+    	list = projects_dao.getAllProjects();
+    	System.out.println(list);
+    	return list;
+        //return BuyMobilesBo.getAllMobilesFromDb(@RequestParam String brand, @RequestParam double minPrice , @RequestParam double maxPrice );
+    }
+
 }

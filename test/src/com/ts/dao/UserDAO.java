@@ -15,6 +15,7 @@ public class UserDAO extends HttpServlet {
     private static final long serialVersionUID = 1L;
        
     public boolean addUser(User user) {
+    	Boolean status = null;
         String user_id = user.getUser_id();
         String password = user.getPassword();
         Connection connection = null;
@@ -22,19 +23,30 @@ public class UserDAO extends HttpServlet {
         ResultSet resultSet = null;
         PreparedStatement ps = null;
         try {
+        	
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quest", "root","root");
-            String query = "insert into user(user_id,password) values (?,?)";
+            String query = "insert into user values (?,?)";
             ps = connection.prepareStatement(query);
             ps.setString(1, user.getUser_id());
             ps.setString(2, user.getPassword());
-            ps.executeUpdate();
-            return true;
+            if (ps.executeUpdate() > 0)
+            	status = true;
+            else 
+            	status = false;
+            System.out.println(status);
         } catch(Exception e) {
             e.printStackTrace();
         }
-    return false;
+    return status;
 }
+    
+    
+    
+    
+    
+   
+
     public UserDAO() {
         super();
         // TODO Auto-generated constructor stub
