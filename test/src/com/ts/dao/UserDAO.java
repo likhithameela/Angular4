@@ -40,6 +40,32 @@ public class UserDAO extends HttpServlet {
         }
     return status;
 }
+    public boolean validateUser(User user) {
+    	Boolean status = null;
+        String user_id = user.getUser_id();
+        String password = user.getPassword();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        PreparedStatement ps = null;
+        try {
+        	
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quest", "root","root");
+            String query = "select user_id,password from user values (?,?)";
+            ps = connection.prepareStatement(query);
+            ps.setString(1, user.getUser_id());
+            ps.setString(2, user.getPassword());
+            if (ps.executeQuery() != null)
+            	status = true;
+            else 
+            	status = false;
+            System.out.println(status);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    return status;
+}
     
     
     

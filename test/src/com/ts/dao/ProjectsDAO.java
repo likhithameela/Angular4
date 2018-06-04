@@ -85,7 +85,7 @@ public class ProjectsDAO {
 		List<Projects> projects = new ArrayList();
 		// Projects p = new Projects();
 
-		String sql = "select prjct_id from projects where lang_name = 'angular'";
+		String sql = "select * from projects where lang_name = 'angular'";
 		try {
 			DAOUtility util = new DAOUtility();
 			Connection connection = util.getConncetion();
@@ -94,8 +94,8 @@ public class ProjectsDAO {
 			while (rs.next()) {
 				p = new Projects();
 				p.setPrjct_id(rs.getString(1));
-				//p.setPrjct_name(rs.getString(2));
-				//p.setDescription(rs.getString(3));
+				p.setPrjct_name(rs.getString(2));
+				p.setDescription(rs.getString(3));
 				System.out.println(p);
 				projects.add(p);
 				System.out.println(p.getLang_name());

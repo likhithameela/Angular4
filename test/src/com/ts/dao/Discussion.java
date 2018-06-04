@@ -1,38 +1,47 @@
 package com.ts.dao;
 
-public class Discussion {
-	private String comment;
-	private String user_id;
-	private String prjct_id;
-	public Discussion() {
-		super();
-	}
-	public Discussion(String comment, String user_id, String prjct_id) {
-		super();
-		this.comment = comment;
-		this.user_id = user_id;
-		this.prjct_id = prjct_id;
-	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-	public String getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
-	}
-	public String getPrjct_id() {
-		return prjct_id;
-	}
-	public void setPrjct_id(String prjct_id) {
-		this.prjct_id = prjct_id;
-	}
-	
-	
-	
-
+import javax.xml.bind.annotation.XmlElement; 
+import javax.xml.bind.annotation.XmlRootElement; 
+ 
+@XmlRootElement 
+public class Discussion{ 
+private String user_id; 
+private String discussion;
+private String lang_name;
+public Discussion() { 
+    super(); 
+} 
+public Discussion(String user_id, String discussion, String lang_name) { 
+    super(); 
+    this.user_id = user_id; 
+    this.discussion = discussion;
+    this.lang_name = lang_name;
+} 
+public String getUser_id() { 
+    return user_id; 
+} 
+@XmlElement 
+public void setUser_id(String user_id) { 
+    this.user_id = user_id; 
+} 
+public String getDiscussion() { 
+    return discussion; 
 }
+public String getLang_name() { 
+    return lang_name; 
+} 
+
+@XmlElement 
+public void setDiscussion(String discussion) { 
+    this.discussion = discussion; 
+}
+public void setLang_name(String lang_name) { 
+    this.lang_name = lang_name; 
+} 
+
+@Override 
+public String toString() { 
+    return "Discussion [user_id=" + user_id + ", discussion=" + discussion + ",lang_name=" + lang_name + "]"; 
+} 
+} 
+
