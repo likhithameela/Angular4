@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Carter+One'
+	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen'
+	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Delius'
+	rel='stylesheet' type='text/css'>
+<title>Register</title>
+</head>
+
+<style>
+body, html {
+	height: 100%;
+	background-repeat: no-repeat;
+	font-family: 'Oxygen', sans-serif;
+}
+
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.navbar-toggle {
+	background-color: black;
+}
+
+h1.title {
+	font-family: 'Carter One';
+	font-size: 50px;
+	color: black;
+	text-align: center;
+}
+
+h3 {
+	margin-top: 0px;
+	font-family: 'Delius';
+	text-align: center;
+}
+
+hr {
+	width: 10%;
+	color: #fff;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	margin-bottom: 15px;
+}
+
+input, input::-webkit-input-placeholder {
+	font-size: 11px;
+	padding-top: 3px;
+}
+
+.main-login {
+	background-color: #eee;
+	/* shadows and rounded borders */
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-center {
+	margin-top: 30px;
+	margin: 0 auto;
+	max-width: 330px;
+	padding: 40px 40px;
+}
+
+.login-button {
+	margin-top: 5px;
+}
+
+.login-register {
+	font-size: 15px;
+	text-align: center;
+}
+</style>
+
+<body>
+	<br>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<h1 class="title">QUEST</h1><hr />
+			</div>
+			<div class="main-login main-center" style="margin-bottom: 20px">
+				<h3>Registration</h3>
+				<form class="form-horizontal" method="post" #form1="ngForm">
+					<div class="form-group">
+						<label for="username" class="cols-sm-2 control-label">Username</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-users fa"
+									aria-hidden="true"></i></span>
+									<input type="text" class="form-control"
+									name="user_id" id="username"  placeholder="Enter your Username" ngModel />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="cols-sm-2 control-label">Password</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="fa fa-lock fa-lg" aria-hidden="true"></i></span> 
+									<input type="password" class="form-control" name="password" 
+									id="password" placeholder="Enter your Password" ngModel />
+							</div>
+						</div> 
+						
+					</div>
+					<div class="form-group">
+						<label for="confirm" class="cols-sm-2 control-label">Confirm
+							Password</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-lock fa-lg" aria-hidden="true"></i></span> <input
+									type="password" class="form-control" name="confirm"
+									id="confirm" placeholder="Confirm your Password" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group ">
+						<button type="button" class="btn btn-lg btn-block login-button"
+							style="color: black; background-color: gold; font-weight: bold;" value="register" (click)="onClick(form1.value)" >Register</button>
+					</div>
+					<div class="login-register">
+						<a routerLink='login' style="color:black">Already a registered user? Login</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
