@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -81,7 +82,7 @@ public class MyResource {
     
 
     @GET
-    @Path("/projectdetails")
+    @Path("/javadetails")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Projects> getData() throws ClassNotFoundException, SQLException {
     	 System.out.println("hi in dao");
@@ -90,7 +91,39 @@ public class MyResource {
     	list = projects_dao.getAllProjects();
     	System.out.println(list);
     	return list;
-        //return BuyMobilesBo.getAllMobilesFromDb(@RequestParam String brand, @RequestParam double minPrice , @RequestParam double maxPrice );
+    	//return BuyMobilesBo.getAllMobilesFromDb(@RequestParam String brand, @RequestParam double minPrice , @RequestParam double maxPrice );
     }
+    @GET
+    @Path("/pythondetails")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Projects> getData1() throws ClassNotFoundException, SQLException {
+    	 System.out.println("hi in dao");
+    	ProjectsDAO projects_dao = new ProjectsDAO(); 
+    	List<Projects> list1 = new ArrayList<Projects>();
+    	list1 = projects_dao.getAllProjects1();
+    	System.out.println(list1);
+    	return list1;
+    	//return BuyMobilesBo.getAllMobilesFromDb(@RequestParam String brand, @RequestParam double minPrice , @RequestParam double maxPrice );
+    }
+    @GET
+    @Path("/angulardetails")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Projects> getData2() throws ClassNotFoundException, SQLException {
+    	 System.out.println("hi in dao");
+    	ProjectsDAO projects_dao = new ProjectsDAO(); 
+    	List<Projects> list2 = new ArrayList<Projects>();
+    	list2 = projects_dao.getAllProjects2();
+    	System.out.println(list2);
+    	return list2;
+    	//return BuyMobilesBo.getAllMobilesFromDb(@RequestParam String brand, @RequestParam double minPrice , @RequestParam double maxPrice );
+    }
+    
+  /* @GET
+    @Path("projectdetails/{lang_name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void find(@PathParam("lang_name") String lang_name){
+    	System.out.println("Called" +lang_name);
+    }
+   */
 
 }
