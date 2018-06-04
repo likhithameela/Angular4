@@ -1,9 +1,85 @@
-<button (click) = "onClick($event)">Hii</button>
+<head>
+<title>Quest</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3
+	.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Delius"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Carter+One"
+	rel="stylesheet">
+<style>
+/* Remove the navbar's default margin-bottom and rounded borders */
+
+body {
+	/*background-image:url(aoo.jpg);*/
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.img-responsive {
+	height: 200px;
+	width: 200px;
+}
+
+a {
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'Carter One';
+	font-size: 50px;
+	color: black;
+}
+
+h2 {
+	font-family: 'Delius';
+}
+
+h3 {
+	font-family: 'Walter Turncoat';
+}
+
+hr {
+	border-top: 2px solid black;
+	width: 900px;
+}
+</style>
+</head>
+
+<div class="container text-center">
+	<h1>JAVA</h1>
+	<br> <img src="assets/Images/java.jpeg" class="img-fluid" alt="Image"
+		alt="Image" width="200" height="200">
+</div>
+<p>Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.Java is a programming language that developers use to create applications on your computer.<br><br>
+
+Java is a programming language and computing platform first released by Sun Microsystems in 1995. There are lots of applications and websites that will not work unless you have Java installed, and more are created every day. Java is fast, secure, and reliable. From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, Java is everywhere!<br><br>
+
+J A V A stands for JUST ANOTHER VIRTUAL ACCELERATOR. "Java" being used as slang for "coffee" Java does not have any full form, but a programming language originally developed by James Gosling at Sun Microsystems in 1995. It derives much of its syntax from the most popular programming languages of all time : C and C++.Java Compiler provided By Oracle is written in Java itself.<br><br>
+
+
+Java applets run in a Web browser with Java Virtual Machine (JVM), which translates Java bytecode into native processor instructions and allows indirect OS or platform program execution. JVM provides the majority of components needed to run bytecode, which is usually smaller than executable programs written through other programming languages. Bytecode cannot run if a system lacks required JVM.<br><br>
+
+
+ Java program development requires a Java software development kit (SDK) that typically includes a compiler, interpreter, documentation generator and other tools used to produce a complete application. <br><br>
+</p>
+
+
+
+<!--  <button (click) = "onClick($event)">Show Projects</button>-->
 <ul>
 <li *ngFor = "let a of java projects" >
- {{a.prjct_id}}
- {{a.prjct_name}}
- {{a.description}}
+ <!-- {{a.prjct_id}}-->
+ <h2><b>{{a.prjct_name}}</b></h2>
+ <p>{{a.description}}</p>
  </li>
  </ul>
  

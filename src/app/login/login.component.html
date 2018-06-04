@@ -100,7 +100,7 @@ input, input::-webkit-input-placeholder {
 				<h3>Sign Up</h3>				
 				<form class="form-horizontal" method="post" #form1="ngForm">
 				<div class="form-group">
-					<label for="username" class="cols-sm-2 control-label">Username</label>
+					<label for="username" class="cols-sm-2 control-label">Username*</label>
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -109,7 +109,7 @@ input, input::-webkit-input-placeholder {
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="password" class="cols-sm-2 control-label">Password</label>
+					<label for="password" class="cols-sm-2 control-label">Password*</label>
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -118,10 +118,10 @@ input, input::-webkit-input-placeholder {
 					</div>
 				</div>
 				<div class="form-group ">
-					<button type="button" class="btn btn-lg btn-block login-button" style="color: black; background-color: gold;font-weight: bold;">Login</button>
+					<button type="button" routerLink = '/home'class="btn btn-lg btn-block login-button" style="color: black; background-color: gold;font-weight: bold;">Login</button>
 				</div>
 				<div class="login-register">
-					<a routerLink='register' style="color: black">New user? Register</a>
+					<a routerLink='/register' style="color: black">New user? Register</a>
 				</div>
 			</form>
 		</div>

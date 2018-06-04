@@ -11,10 +11,11 @@ java;
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
-  }
-onClick(){
-  alert(this.java);
-  this.http.get('test/rest/myresource/projectdetails').subscribe(res => this.java = res);
+    this.http.get('test/rest/myresource/javadetails').subscribe(res => this.java = res);
   console.log(this.java);
+
   }
+onClick() {
+   //alert(this.java);
+    }
 }

@@ -1,9 +1,98 @@
-<button (click) = "onClick($event)">Hii</button>
+<head>
+<title>Quest</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3
+	.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Delius"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Carter+One"
+	rel="stylesheet">
+<style>
+/* Remove the navbar's default margin-bottom and rounded borders */
+body {
+	/*background-image:url(aoo.jpg);*/
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.img-responsive {
+	height: 200px;
+	width: 200px;
+}
+
+a {
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'Carter One';
+	font-size: 50px;
+	color: black;
+}
+
+h2 {
+	font-family: 'Delius';
+}
+
+h3 {
+	font-family: 'Walter Turncoat';
+}
+
+hr {
+	border-top: 2px solid black;
+	width: 900px;
+}
+</style>
+</head>
+<div class="container text-center">
+	<h1>Python</h1>
+
+	<br> <img src="assets/Images/python1.png" class="img-fluid"
+		alt="Image" width="200" height="200">
+</div>
+<p>
+	Python is an interpreted high-level programming language for
+	general-purpose programming.Created by Guido van Rossum and first
+	released in 1991, Python interpreters are available for many operating
+	systems.Python features a dynamic type system and automatic memory
+	management.<br>
+	<br> Python is an interpreted,object-oriented programming language
+	similar to PERL,that has gained popularity because of its clear syntax
+	and readability. ... Python was created by Guido van Rossum, a former
+	resident of the Netherlands, whose favorite comedy group at the time
+	was Monty Python's Flying Circus.<br><br>
+
+They are known in most programming languages, sometimes also called subroutines or procedures.Functions are used to utilize code in more than one place in a program. The only way without functions to reuse code consists in copying the code.A function in Python is defined by a def statement.
+Python is a general purpose programming language created in the late 1980s,and named after Monty Python,that's used by thousands of people to do things from testing microchips at Intel, to powering Instagram, to building video games with the PyGame library.<br><br>
+
+Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. ... Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse.<br><br>
+
+Why is it called Python? When he began implementing Python, Guido van Rossum was also reading the published scripts from “Monty Python's Flying Circus”, a BBC comedy series from the 1970s. Van Rossum thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.Python is strongly but dynamically typed. ... This makes Python very easy to write and not too bad to read, but difficult to analyze.<br><br>
+
+While Python can be more user-friendly than Java, as it has a more intuitive coding style, both languages do have their unique advantages for developers and end users. However, if you are just beginning your path towards a programming career, you might want to start by learning Python, as it is less complex.<br><br>
+
+Some programming-language features of Python are:<br>
+
+->A variety of basic data types are available: numbers (floating point, complex, and unlimited-length long integers), strings (both ASCII and Unicode), lists, and dictionaries.<br>
+
+->Python supports object-oriented programming with classes and multiple inheritance.
+</p>
+<!--  <button (click) = "onClick($event)">Show Projects</button>-->
 <ul>
-<li *ngFor = "let a of python1 projects" >
- {{a.prjct_id}}
- {{a.prjct_name}}
- {{a.description}}
- </li>
- </ul>
- 
+	<li *ngFor="let a of python1 projects">
+		<!--  {{a.prjct_id}}-->
+		<h2>
+			<b> {{a.prjct_name}}</b>
+		</h2>
+
+		<p>{{a.description}}</p>
+	</li>
+</ul>

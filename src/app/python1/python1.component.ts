@@ -11,10 +11,11 @@ python1;
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
+     this.http.get("test/rest/myresource/pythondetails").subscribe(res => this.python1 = res);
+  console.log(this.python1);
+ 
   }
 onClick(){
-  alert(this.python1);
-  this.http.get("test/rest/myresource/projectdetails").subscribe(res => this.python1 = res);
-  console.log(this.python1);
+ // alert(this.python1);
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,42 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+  onclick(data) {
+    alert(data.user_id);
+    this.http.post("test/rest/myresource/register1", {
+      user_id: data.user_id,
+      password: data.password,
+    }, {responseType: 'text'})
+      .subscribe(
+      (res: any) => {
+        console.log(res);
+        alert("Hi! :)");
+      },
+      err => {
+        console.log(err);
+        alert("Bye :(");
+      }
+      );
+  }
+  /* onClick(data){
+     alert(data.user_id);
+
+   this.http.post('test/rest/myresource/register1',{
+     user_id : data.user_id,
+     password : data.password
+     }
+   ).subscribe(
+   (res: any) =>{
+     console.log(res);
+     alert("Hi! :)");
+   },
+     err=>{
+       console.log(err);
+       alert("Bye :(");
+     }
+     );
+    } */
 
   ngOnInit() {
   }

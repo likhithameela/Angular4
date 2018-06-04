@@ -1,9 +1,213 @@
-<button (click) = "onClick($event)">Hii</button>
-<ul>
-<li *ngFor = "let a of angular projects" >
- {{a.prjct_id}}
- {{a.prjct_name}}
- {{a.description}}
- </li>
- </ul>
+<head>
+<title>Quest</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3
+	.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Delius"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Carter+One"
+	rel="stylesheet">
+<style>
+/* Remove the navbar's default margin-bottom and rounded borders */
+body { .pb-cmnt-container { font-family:Lato;
+	margin-top: 100px;
+}
+
+​
+    .pb-cmnt-textarea {
+	resize: none;
+	padding: 20px;
+	height: 130px;
+	width: 100%;
+	border: 1px solid #F2F2F2;
+}
+/*background-image:url(aoo.jpg);*/
+background-size
+
+
+
+
+
+
+
+
+:
+
+
+
+
  
+
+
+
+
+cover
+
+
+
+
+
+
+
+
+;
+background-repeat
+
+
+
+
+
+
+
+
+:
+
+
+
+
+ 
+
+
+
+
+no-repeat
+
+
+
+
+
+
+
+
+;
+}
+.img-responsive {
+	height: 200px;
+	width: 200px;
+}
+
+a {
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'Carter One';
+	font-size: 50px;
+	color: black;
+}
+
+h2 {
+	font-family: 'Delius';
+}
+
+h3 {
+	font-family: 'Walter Turncoat';
+}
+
+hr {
+	border-top: 2px solid black;
+	width: 900px;
+}
+</style>
+</head>
+
+<div class="container text-center">
+	<h1>AngularJS</h1>
+	<br> <img src="assets/Images/angular.jpeg" class="img-fluid"
+		alt="Image" width="200" height="200">
+</div>
+<br>
+<br>
+
+
+<body>
+	<p>
+		AngularJS (commonly referred to as "Angular.js" or "AngularJS") is a
+		JavaScript-based open-source front-end web.Application framework
+		mainly maintained by Google and by a community of individuals and
+		corporations to address many of the challenges encountered in
+		developing single-page applications.One of the original creators, Adam
+		Abrons stopped working on AngularJS but Misko Hevery and his manager,
+		Brad Green, spun the original GetAngular project into a new project,
+		named it AngularJS, and built a team to create an maintain it within
+		Google.<br> <br> AngularJS is a structural framework for
+		dynamic web apps. With AngularJS, designers can use HTML as the
+		template language and it allows for the extension of HTML's syntax to
+		convey the application's components effortlessly. Angular makes much
+		of the code you would otherwise have to write completely redundant.<br>
+
+
+		AngularJS's data binding and dependency injection eliminate much of
+		the code you would otherwise have to write.AngularJS Scope ?Previous
+		Next?The scope is the binding part between the HTML (view) and the
+		JavaScript (controller).The scope is an object with the available
+		properties and methods.The scope is available for both the view and
+		the controller.<br> <br> AngularJS - MVC Architecture.
+		Advertisements. Model View Controller or MVC as it is popularly
+		called, is a software design pattern for developing web applications.
+		A Model View Controller pattern is made up of the following three
+		parts - Model - It is the lowest level of the pattern responsible for
+		maintaining data.<br> <br> AngularJS is a structural
+		framework for dynamic web apps. It lets you use HTML as your template
+		language and lets you extend HTML's syntax to express your
+		application's components clearly and succinctly.Angular's data binding
+		and dependency injection eliminate much of the code you would
+		otherwise have to write.<br> <br>
+
+	</p>
+
+	<h2>Installation Videos</h2>
+	<a href="https://www.youtube.com/watch?v=UzvyuYEAU8o"><h3>AngularJS
+			installations</h3> </a> Angular CLI installations
+	https://www.youtube.com/watch?v=F10MfqzhTlU AngularJS installations on
+	UBUNTU https://www.youtube.com/watch?v=-nd6m6JsQRg Installations on
+	NODE AND NPM https://www.youtube.com/watch?v=K6QiSKy2zoM
+
+	<!--  <button (click) ="onClick($event)">Show Projects</button>-->
+	<ul>
+		<h2>Projects</h2>
+		<li *ngFor="let a of angular projects">
+			<!-- <h1><b> {{a.prjct_id}}</b></h1> -->
+			<h3>
+				<b> {{a.prjct_name}}</b>
+			</h3> <br> <br>
+			<p>{{a.description}}</p>
+		</li>
+	</ul>
+
+	<form #form1="ngForm">
+		<div class="container pb-cmnt-container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-info">
+						<div class="panel-body">
+							<input type="text" class="form-control" name="user_id"
+								id="user_id" placeholder="Enter User Name" ngModel /> <input
+								type="text" class="form-control" name="discussion"
+								id="discussion" placeholder="Enter Comment" ngModel /> <input
+								type="text" class="form-control" name="lang_name" id="lang_name"
+								placeholder="Enter Language" ngModel />
+							<form class="form-inline">
+								<div class="btn-group">
+
+									<button routerLink='/discussion' (click) ="onClick(form1.value)"
+										class="btn btn-primary pull-right" type="button">Send</button>
+								</div>
+
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
