@@ -31,67 +31,23 @@ body { .pb-cmnt-container { font-family:Lato;
 }
 /*background-image:url(aoo.jpg);*/
 background-size
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-cover
-
-
-
-
-
-
-
-
+:cover
 ;
+
+
 background-repeat
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-no-repeat
-
-
-
-
-
-
-
-
+:no-repeat
 ;
+
+
 }
 .img-responsive {
 	height: 200px;
 	width: 200px;
+}
+
+space {
+	padding: 50px;
 }
 
 a {
@@ -163,17 +119,31 @@ hr {
 		otherwise have to write.<br> <br>
 
 	</p>
+	<div class="container text-center">
+		<h2>Required Installation Videos</h2>
+		<hr>
+	</div>
+	<span class="glyphicons glyphicons-facetime-video"></span> &nbsp;
+	&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	<a target="_blank" href="https://www.youtube.com/watch?v=UzvyuYEAU8o">AngularJS
+		Installations</a>
+	<br> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	<a target="_blank" href="https://www.youtube.com/watch?v=F10MfqzhTlU">Angular
+		CLI installations</a>
+	<br> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	<a target="_blank" href="https://www.youtube.com/watch?v=-nd6m6JsQRg">AngularJS
+		installations on UBUNTU</a>
+	<br> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	<a target="_blank" href="https://www.youtube.com/watch?v=K6QiSKy2zoM">Installations
+		on NODE AND NPM</a>
 
-	<h2>Installation Videos</h2>
-	<a href="https://www.youtube.com/watch?v=UzvyuYEAU8o"><h3>AngularJS
-			installations</h3> </a> Angular CLI installations
-	https://www.youtube.com/watch?v=F10MfqzhTlU AngularJS installations on
-	UBUNTU https://www.youtube.com/watch?v=-nd6m6JsQRg Installations on
-	NODE AND NPM https://www.youtube.com/watch?v=K6QiSKy2zoM
 
 	<!--  <button (click) ="onClick($event)">Show Projects</button>-->
 	<ul>
-		<h2>Projects</h2>
+		<div class="container text-center">
+			<h2>Projects</h2>
+			<hr>
+		</div>
 		<li *ngFor="let a of angular projects">
 			<!-- <h1><b> {{a.prjct_id}}</b></h1> -->
 			<h3>
@@ -182,6 +152,11 @@ hr {
 			<p>{{a.description}}</p>
 		</li>
 	</ul>
+	<div class="container text-center">
+		<button routerLink='/discussion' style="padding: 15px"
+			class="btn btn-primary pull-center" type="button">Discussion</button>
+		<br><br>
+	</div>
 
 	<form #form1="ngForm">
 		<div class="container pb-cmnt-container">
@@ -198,12 +173,14 @@ hr {
 							<form class="form-inline">
 								<div class="btn-group">
 
-									<button routerLink='/discussion' (click) ="onClick(form1.value)"
+									<button routerLink='/discussion'
+										(click) ="onClick(form1.value)"
 										class="btn btn-primary pull-right" type="button">Send</button>
 								</div>
 
 							</form>
-							
+
+
 						</div>
 					</div>
 				</div>

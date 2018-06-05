@@ -1,10 +1,9 @@
 <ul>
 	<h2>Discussions</h2>
 	<li *ngFor="let a of discussion">
-		<!-- <h1><b> {{a.prjct_id}}</b></h1> -->
-		<h3>
-			<b> {{a.user_id}}</b>
-		</h3> <br> <br>
-		<p>{{a.discussion}}</p>
-	</li>
+		<!-- <h1><b> {{a.prjct_id}}</b></h1> --> 
+		<b> {{a.user_id}}  :</b>
+	{{a.discussion}}
+	</li><br><br><br><br>
+	<button routerLink='/angular' style="padding: 10px" class="btn btn-primary pull-center">Back</button>
 </ul>
